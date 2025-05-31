@@ -2,9 +2,6 @@ class Prompts
 {
     public List<string> _prompts;
     public Random rnd; 
-
-
-
     public void Promt_dict()
     {
         _prompts = new List<string>
@@ -20,7 +17,6 @@ class Prompts
 
     }
     
-
     public string Show()
     {
         Promt_dict(); 
