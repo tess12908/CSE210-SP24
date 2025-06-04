@@ -16,7 +16,7 @@ class Program
 
             if (scripture1.IsAllHidden())
             {
-                Console.WriteLine("\nAll words are hidden! Well done memorizing.");
+                Console.WriteLine("\nAll words are hidden! Great job memorizing!!!");
                 running = false;
             }
 
