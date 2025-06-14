@@ -45,7 +45,8 @@ class Activity
         int i = 0;
         while (DateTime.Now < endtime)
         {
-            Console.WriteLine(animationStrings[i]);
+            Console.Write(animationStrings[i % animationStrings.Count]);
+            //Console.WriteLine(animationStrings[i]);
             Thread.Sleep(500);
             Console.Write("\b");
             i++; 

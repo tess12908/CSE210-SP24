@@ -40,11 +40,10 @@ class Breathing : Activity
     public void Display()
     {
         StartMessage(B_name);
+        Spinner(5);  
 
         B_duration = RunTime();
-        Spinner(5); 
-        Console.Clear();
-
+    
         RunBreathing(B_duration);
 
         EndMessage();
