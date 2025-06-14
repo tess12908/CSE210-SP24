@@ -1,7 +1,7 @@
 class Listing : Activity
 {
     private static string L_name = "Listing";
-    private static string L_description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+    private static string L_description = "This activity will help you reflect on the good things in your life \nby having you list as many things as you can in a certain area.";
     private int L_duration;
 
     List<string> _prompts = new List<string>
@@ -32,7 +32,8 @@ class Listing : Activity
             Console.WriteLine(i);
             Thread.Sleep(1000);
         }
-        Console.WriteLine("Start writing/ listing as many items as you can now");  
+
+        Console.WriteLine("Start writing/ listing as many items as you can now");
     }
 
     public void ListingIdeas(int runtime)
@@ -41,42 +42,56 @@ class Listing : Activity
         DateTime startTime = DateTime.Now;
 
         Console.WriteLine($"You have {runtime} seconds to list as many items as you can.");
-
-        while ((DateTime.Now - startTime).TotalSeconds < runtime)
+        while (true)
         {
-            string entered = "";
-            if (entered == "")
-            {
-                string input = Console.ReadLine();
-                items.Add(input);
-            }
+            if ((DateTime.Now - startTime).TotalSeconds >= runtime)
+                break;
+
+            Console.Write(">");
+            string input = Console.ReadLine();
+            items.Add(input);
         }
 
-        Console.WriteLine($"You listed {items.Count} items");
+        Console.WriteLine($"\nYou listed {items.Count} items:");
         foreach (string item in items)
         {
             Console.WriteLine($"- {item}");
         }
-    }
+
+    } 
 
     public void Display()
     {
+        Console.Clear(); 
+        Spinner(5);
+        Console.Clear(); 
+         
         StartMessage(L_name);
+        Thread.Sleep(5000);
+        Console.Clear(); 
+        Console.WriteLine($"This is specificly the {L_name} activity. {L_description} "); 
+        Thread.Sleep(3000);
+        Console.Clear();
 
         L_duration = RunTime();
-        Spinner(5); 
+
+        Console.Clear();
+        Spinner(5);
         Console.Clear();
 
         DisplayRndPrompt();
 
         Countdown(5);
+        Thread.Sleep(1000);
         Console.Clear();
 
         ListingIdeas(L_duration);
+        Thread.Sleep(5000);
+        Console.Clear();
 
         EndMessage();
-        Spinner(5); 
-        Console.Clear(); 
+        Spinner(5);
+        Console.Clear();
     }
-
+    
 }

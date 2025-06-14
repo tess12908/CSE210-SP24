@@ -24,11 +24,8 @@ class Activity
     {
         Console.WriteLine($"Welcome to the Mindfulness Activity Program! - this is the {activity} activity");
         Console.WriteLine();
-        Console.WriteLine("This activity is designed to help you slow down, focus your thoughts,");
+        Console.WriteLine("These Activitys are designed to help you slow down, focus your thoughts,");
         Console.WriteLine("and become more aware of the present moment.");
-        Console.WriteLine("You'll be given prompts and questions to reflect on quietly.");
-        Console.WriteLine();
-        Console.WriteLine("Take a deep breath, clear your mind, and when you're ready, we'll begin.");
         Console.WriteLine();
     }
 
@@ -56,9 +53,7 @@ class Activity
     protected int RunTime()
     {
         Console.WriteLine("How long would you like to do this for? We recommend at least 30 seconds");
-        
-        
-
+        _duration = int.Parse(Console.ReadLine()); 
         return _duration; 
     }
 

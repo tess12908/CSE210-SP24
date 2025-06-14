@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.IO.Compression;
+using System.Runtime.CompilerServices;
 
 class Breathing : Activity
 {
@@ -31,23 +32,29 @@ class Breathing : Activity
 
             Console.WriteLine("Breathe out...");
             Thread.Sleep(5000);
-            passed += 5; 
-
-            Console.Clear();      
+            passed += 5;       
         }
     }
 
     public void Display()
     {
+        Console.Clear(); 
+        Spinner(5);
+        Console.Clear(); 
+
         StartMessage(B_name);
-        Spinner(5);  
+        Thread.Sleep(5000);
+        Console.Clear(); 
+        Console.WriteLine($"This is specificly the {B_name} activity. {B_description} "); 
+        Thread.Sleep(3000);
+        Console.Clear();
 
         B_duration = RunTime();
+        Console.Clear(); 
     
         RunBreathing(B_duration);
 
         EndMessage();
-        Spinner(5); 
-        Console.Clear(); 
+        Spinner(5);
     }
 }

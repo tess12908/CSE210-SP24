@@ -1,7 +1,9 @@
+using System.Runtime.CompilerServices;
+
 class Reflection : Activity
 {
     private static string R_name = "Reflection";
-    private static string R_description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    private static string R_description = "This activity will help you reflect on times in your life when you have shown strength and resilience. \nThis will help you recognize the power you have and how you can use it in other aspects of your life.";
     private int R_duration;
 
     List<string> _prompts = new List<string>
@@ -49,41 +51,52 @@ class Reflection : Activity
     }
 
     public void AddTogether(int runTIme)
-    { 
+    {
         double passed = 0;
         while (passed < runTIme)
         {
             DisplayRndPrompt();
-            Thread.Sleep(2500);
-            passed += 2.5;
+            Thread.Sleep(7000);
+            passed += 7;
 
             DisplayRndQuestion();
             Thread.Sleep(5000);
-            passed += 2.5;
+            passed += 5;
 
             if (passed >= runTIme)
             {
                 break;
             }
-            
+
             Console.Clear();
-        }  
+        }
     }
 
 
     public void Display()
     {
+        Console.Clear(); 
+        Spinner(5);
+        Console.Clear(); 
+        
         StartMessage(R_name);
+        Thread.Sleep(5000);
+        Console.Clear(); 
+        Console.WriteLine($"This is specificly the {R_name} activity. {R_description} "); 
+        Thread.Sleep(3000);
+        Console.Clear();
 
         R_duration = RunTime();
-        Spinner(5); 
-        
+
+        Console.Clear();
+        Spinner(5);
+        Console.Clear();
 
         AddTogether(R_duration);
+        Console.Clear(); 
 
         EndMessage();
-        Spinner(5); 
-        Console.Clear(); 
+        Spinner(5);
+        Console.Clear();
     }
-
 }
