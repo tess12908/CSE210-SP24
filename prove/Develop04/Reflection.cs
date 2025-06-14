@@ -77,7 +77,7 @@ class Reflection : Activity
 
         R_duration = RunTime();
         Spinner(5); 
-        Console.Clear(); 
+        
 
         AddTogether(R_duration);
 
