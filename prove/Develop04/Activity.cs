@@ -1,0 +1,63 @@
+using System.ComponentModel;
+using Microsoft.VisualBasic;
+class Activity
+{
+    protected string _name;
+    protected string _description;
+    protected int _duration;
+    List<String> animationStrings = new List<string>
+    {
+        "|",
+        "/",
+        "-",
+        "\\", // i used chat GPT here to figure out why i needed 2 back slashes here instead of one! Apparently it's a syntax thing in c#
+        "|"
+    }; 
+
+    protected Activity(string name, string description, int duration)
+    {
+        _duration = duration;
+        _name = name;
+        _description = description;
+    }
+    protected void StartMessage(string activity)
+    {
+        Console.WriteLine($"Welcome to the Mindfulness Activity Program! - this is the {activity} activity");
+        Console.WriteLine();
+        Console.WriteLine("This activity is designed to help you slow down, focus your thoughts,");
+        Console.WriteLine("and become more aware of the present moment.");
+        Console.WriteLine("You'll be given prompts and questions to reflect on quietly.");
+        Console.WriteLine();
+        Console.WriteLine("Take a deep breath, clear your mind, and when you're ready, we'll begin.");
+        Console.WriteLine();
+    }
+
+    protected void EndMessage()
+    {
+        Console.WriteLine("Well done! You've completed the mindfulness activity.");
+        Console.WriteLine("I hope that this helped you become more mindful and reflective");
+        Console.WriteLine("Come back soon"); 
+    }
+
+    protected void Spinner(int seconds)
+    {
+        DateTime endtime = DateTime.Now.AddSeconds(seconds);
+        int i = 0;
+        while (DateTime.Now < endtime)
+        {
+            Console.WriteLine(animationStrings[i]);
+            Thread.Sleep(500);
+            i++; 
+        }
+    }
+
+    protected int RunTime()
+    {
+        Console.WriteLine("How long would you like to do this for? We recommend at least 30 seconds");
+        
+        
+        
+        return _duration; 
+    }
+
+}

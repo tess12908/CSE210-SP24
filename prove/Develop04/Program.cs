@@ -1,9 +1,50 @@
 using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        bool running = true;
+        while (running != false)
+        {
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("1. Start Breathing activity");
+            string option_one = Console.ReadLine();
+    
+            Console.WriteLine("2. Start Reflecting activity");
+            string option_two = Console.ReadLine();
+
+            Console.WriteLine("3. Start Listing activity");
+            string option_three = Console.ReadLine();
+            
+
+            Console.WriteLine("4. Quit");
+            string option_four = Console.ReadLine();
+
+            Console.WriteLine("Select a choice from the menu");
+            string user_choice = Console.ReadLine();
+
+            if (user_choice == option_one)
+            {
+                Breathing breathingActivity  = new Breathing();
+                breathingActivity.Display();
+
+            }
+            if (user_choice == option_two)
+            {
+                Reflection ReflectionActivity  = new Reflection();
+                ReflectionActivity.Display();
+            }
+            if (user_choice == option_three)
+            {
+                Listing ListingActivity  = new Listing();
+                ListingActivity.Display();
+            }
+            if (user_choice == option_four)
+            {
+                running = false; 
+            }
+        }
     }
 }
