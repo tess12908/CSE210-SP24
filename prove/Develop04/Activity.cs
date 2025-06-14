@@ -47,6 +47,7 @@ class Activity
         {
             Console.WriteLine(animationStrings[i]);
             Thread.Sleep(500);
+            Console.Write("\b");
             i++; 
         }
     }
@@ -56,7 +57,7 @@ class Activity
         Console.WriteLine("How long would you like to do this for? We recommend at least 30 seconds");
         
         
-        
+
         return _duration; 
     }
 
