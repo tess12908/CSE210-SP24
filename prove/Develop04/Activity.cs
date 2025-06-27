@@ -42,8 +42,7 @@ class Activity
         int i = 0;
         while (DateTime.Now < endtime)
         {
-            Console.Write(animationStrings[i % animationStrings.Count]); // I went to the drop in lab to get help and this is what the recommended. They explained that it loops through the spinner symbols repeatedly
-            //Console.WriteLine(animationStrings[i]);
+            Console.Write(animationStrings[i % animationStrings.Count]); // I went to the drop in lab to get help and this is what the recommended. They explained that it loops through the spinner symbols repeatedly like a minni while in a while
             Thread.Sleep(500);
             Console.Write("\b");
             i++; 
