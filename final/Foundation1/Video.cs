@@ -5,8 +5,8 @@ using System.Diagnostics.Contracts;
 
 public class Video
 {
-    public string _title; 
-    public string _author; 
+    private string _title; 
+    private string _author; 
     public int _seconds; 
     private List<Comment> _comments = new List<Comment>();
 

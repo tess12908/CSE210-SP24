@@ -25,10 +25,11 @@ class Program
         videos.Add(video1);
         videos.Add(video2);
         videos.Add(video3);
-        
+
         foreach (Video video in videos)
-        {
+        { 
             video.DisplayVideoInfo();
+            Console.WriteLine("/////////////////////////////////////////////////"); 
         }
 
     }
